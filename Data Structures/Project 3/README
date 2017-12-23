@@ -1,0 +1,22 @@
+/* * @Author * Student Name: Mehmet Barış Yaman				
+* Student ID : 150130136 * Date: 11/12/2015 */ 
+
+WORKING WITH THE PROGRAM
+
+For Mac Terminals or ssh firstly we use this command to return the desktop:
+
+cd Desktop
+
+Then for opening a file, we again use the same command:
+
+cd filename
+
+When we reach the file that has the source and header files of  the program we use this command to compile the codes:
+
+g++ main.cpp operations.cpp
+
+After compiling the codes a.out file must be created in that file and the program is ready for start. Then to start the program, we write this command:
+
+./a.out
+
+Then the program is started and an output file must be created and written. Then, we open the output file and see the result of the program. 

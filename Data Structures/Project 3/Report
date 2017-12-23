@@ -1,0 +1,42 @@
+/*  
+* @Author  
+* Student Name: Mehmet Barış Yaman
+* Student ID : 150130136 * Date: 11/12/2015   */
+DATA STRUCTURES HOMEWORK 3 REPORT
+In this homework, I firstly created the Queue(for the deck of the cards), Stack(for the temporary space and the cards that are matched), and Node (cards for the game) structures and wrote their function names and values in struct.h file.
+I think that using stack data structure for the cards that are matched and used in the final state of the program is not compulsory, but I used stack for them in order to implement them more easily.
+I wrote the function implementations in operations.cpp file using necessary variables in their structure. I divided writingtofile() function in four states for writing all of the shuffled cards,
+match states, summations and the result of the game in a single function.
+I used an array for shuffling the cards, simply shuffled the cards in array with swap() function at first and enqueued the cards back to the deck(queue) after.
+Then, I wrote the recursive game function in main.cpp which is for shuffling the cards, comparing the sequence of the game and card number and giving the cards to necessary place. The state, which tells that the queue(deck) is empty is the base line of the recursive function.
+ Console output:
+  
+Pseudocode of the recursive shuffling function:
+if global variable karistirildi is false
+if global variable shufflepoint is 51
+make global variable karistirildi true;
+for variable y is between 0 and 52 and increase y by 1 in any loop
+add the yth element of the array to the queue deste;
+write the yth element of the array, 1 and 0 to output sequent arguements; swap the global shufflepointth element of the array with a random element in the array; increase global variable shufflepoint by 1;
+return to this function;
+if queue deste is empty
+create a variable called toplam and give 0 as a value; while stack eslesen is not empty
+create a DataType variable h and give it a value removed from stack eslesen; write h, 3 and 0 to the output file as sequent arguements;
+if h’s number is 1 or 11 or 12 or 13
+increase variable toplam by h’s number;
+write any of a DataType variable, 4 and variable toplam to output as sequent arguements; return;
+else
+if global variable sira is greater or equal than 14
+while stack yer is not empty remove from yer;
+make global variable sira 1;
+return to this function;
+create a DataType variable g and give it a value that is removed from the queue deste; if global variable sira is not equal to g’s number
+add g to the stack yer;
+increase global variable sir by 1;
+write address of g, 2 and 0 to the output file as sequent arguements; call this function again;
+else
+while stack yer is not empty
+create a DataType variable x and give a value removed from stack yer;
+add x to the queue deste; add g to the stack eslesen;
+write to output file address of g, 2 and 1 as sequent arguements; make global variable sira 1;
+call this function again;
